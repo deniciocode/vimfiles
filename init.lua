@@ -36,6 +36,7 @@ vim.o.number = true
 vim.o.relativenumber = false
 vim.o.undofile = true
 vim.o.foldenable = false
+vim.opt.colorcolumn = "81"
 vim.o.winwidth = 81
 vim.o.splitbelow = true
 vim.o.splitright = true

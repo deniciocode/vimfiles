@@ -2,7 +2,8 @@ require('lualine').setup()
 
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
-  ensure_installed = { "css", "html", "typescript", "lua", "tsx", "bash", "vim", "vimdoc", "query" },
+  ensure_installed = { "css", "html", "typescript", "lua", "tsx", "bash",
+  "vim", "vimdoc", "query" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -13,6 +14,6 @@ require'nvim-treesitter.configs'.setup {
 
   highlight = {
     enable = true,
-    additional_vim_regex_highlighting = false,
+    additional_vim_regex_highlighting = true,
   },
 }

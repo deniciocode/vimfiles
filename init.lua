@@ -90,6 +90,8 @@ vim.g.AutoCloseProtectedRegions = {"Character"}
 
 -- Everforest Farbschema Konfiguration
 vim.g.everforest_background = 'medium'
+vim.cmd('set conceallevel=0')
+vim.cmd('let g:vim_json_conceal=0')
 vim.cmd('colorscheme everforest')
 vim.api.nvim_set_option('termguicolors', true)
 

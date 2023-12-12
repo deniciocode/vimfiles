@@ -107,6 +107,10 @@ vim.cmd('let g:vim_json_conceal=0')
 vim.cmd('colorscheme everforest')
 vim.api.nvim_set_option('termguicolors', true)
 
+vim.api.nvim_set_option('hlsearch', true)
+vim.api.nvim_set_option('incsearch', true)
+
+
 -- DeleteTrailingWhitespace Konfiguration
 vim.g.DeleteTrailingWhitespace = 1
 vim.g.DeleteTrailingWhitespace_Action = 'delete'
@@ -114,14 +118,6 @@ vim.g.DeleteTrailingWhitespace_Action = 'delete'
 -- Fzf Vorschau-Fenster
 vim.g.fzf_preview_window = {'hidden,right,50%,<70(up,40%)', 'ctrl-/'}
 
--- Sucheinstellungen
-vim.cmd('set hlsearch')
-vim.cmd('set incsearch')
-
 -- Autoread beim Fokuserhalt und Änderung der Datei im Hintergrund
 vim.cmd('au CursorHold * checktime')
 vim.cmd('au FocusGained * checktime')
-
--- Vimrc automatisch neu laden, wenn es bearbeitet wird
-vim.cmd('autocmd! bufwritepost .init.lua source %')
-vim.cmd('autocmd! bufwritepost init.lua source %')

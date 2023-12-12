@@ -76,19 +76,6 @@ vim.g.syntastic_check_on_open = 1
 vim.g.syntastic_check_on_wq = 0
 vim.g.syntastic_mode_map = { passive_filetypes = {'html'} }
 
--- Golang Konfiguration
-vim.g.go_fmt_command = 'goimports'
-vim.g.go_highlight_structs = 1
-vim.g.go_highlight_format_strings = 1
-vim.g.go_highlight_fields = 1
-vim.g.go_highlight_functions = 1
-vim.g.go_highlight_extra_types = 1
-vim.g.go_highlight_functions_calls = 1
-vim.g.go_highlight_types = 1
-vim.g.go_highlight_operators = 1
-vim.g.go_highlight_build_constraints = 1
-vim.g.syntastic_go_checkers = {'go', 'govet', 'errcheck'}
-
 -- Gemfile, Rakefile, etc.
 vim.cmd('au BufRead,BufNewFile Gemfile,Rakefile,Thorfile,config.ru,Vagrantfile,Guardfile,Capfile set ft=ruby')
 

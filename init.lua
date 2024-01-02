@@ -77,7 +77,7 @@ vim.g.syntastic_check_on_wq = 0
 vim.g.syntastic_mode_map = { passive_filetypes = {'html'} }
 
 -- Gemfile, Rakefile, etc.
-vim.cmd('au BufRead,BufNewFile Gemfile,Rakefile,Thorfile,config.ru,Vagrantfile,Guardfile,Capfile set ft=ruby')
+vim.cmd('au BufRead,BufNewFile Gemfile,Rakefile,config.ru,Guardfile,Capfile set ft=ruby')
 
 -- Airline Konfiguration
 vim.g.Powerline_symbols = 'fancy'

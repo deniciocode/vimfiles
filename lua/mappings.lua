@@ -58,6 +58,8 @@ vim.keymap.set("n", "gy", "<Plug>(coc-type-definition)", {silent = true})
 vim.keymap.set('n', '<Leader>i', '<Plug>(coc-implementation)', {silent = true})
 vim.keymap.set('n', 'gi', '<Plug>(coc-implementation)', {silent = true})
 vim.keymap.set('n', '<Leader>q', '<Plug>(coc-codeaction)', {silent = true})
+vim.keymap.set("n", "[g", "<Plug>(coc-diagnostic-prev)", {silent = true})
+vim.keymap.set("n", "]g", "<Plug>(coc-diagnostic-next)", {silent = true})
 vim.keymap.set('i', '<c-space>', 'coc#refresh()', {silent = true})
 
 -- key mapping for window navigation
@@ -105,21 +107,3 @@ vim.keymap.set("i", "<c-space>", "coc#refresh()", {silent = true, expr = true})
 
 -- Symbol renaming
 vim.keymap.set("n", "<leader>rn", "<Plug>(coc-rename)", {silent = true})
-
-
-
-
--- TODO transfer to Lua
--- if has("autocmd")
---   au BufNewFile,BufRead *.go set filetype=go
---   au FileType go nmap <Leader>b <Plug>(go-build)
---   au FileType go nmap <Leader>gd <Plug>(go-doc)
---   au FileType go nmap <Leader>i <Plug>(go-info)
---   au FileType go nmap <Leader>r <Plug>(go-run)
---   " au FileType go nmap <Leader>t <Plug>(go-test)
---   au FileType go nmap gd <Plug>(go-def-tab)
---   au FileType go setl ts=4 sw=4 sts=4 noet
-
---   au BufNewFile,BufRead *.vue set filetype=vue
--- endif
-

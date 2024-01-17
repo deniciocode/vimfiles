@@ -5,10 +5,6 @@ return {
     {'junegunn/fzf', dir = '~/.fzf', run = './install --all'},
     {'junegunn/fzf.vim'},
     {'ggreer/the_silver_searcher'},
-    {
-      'autozimu/LanguageClient-neovim',
-      branch = 'next', run = 'bash install.sh'
-    },
     {'tpope/vim-commentary'},
     {'tpope/vim-fugitive'},
     {'tpope/vim-surround'},
@@ -20,7 +16,6 @@ return {
     {'vim-scripts/DeleteTrailingWhitespace'},
     {'alvan/vim-closetag'},
     {'neanias/everforest-nvim'},
-    {'RRethy/nvim-base16'},
     {'fatih/vim-go', run = ':GoUpdateBinaries'},
     {'jgdavey/vim-blockle'},
     {'kchmck/vim-coffee-script'},

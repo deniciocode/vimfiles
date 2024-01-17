@@ -92,6 +92,7 @@ vim.g.everforest_background = 'medium'
 vim.cmd('set conceallevel=0')
 vim.cmd('let g:vim_json_conceal=0')
 vim.cmd('colorscheme everforest')
+vim.cmd('hi Normal guibg=NONE ctermbg=NONE')
 vim.api.nvim_set_option('termguicolors', true)
 
 vim.api.nvim_set_option('hlsearch', true)

@@ -14,7 +14,6 @@ return {
     {'nvim-tree/nvim-web-devicons'},
     {'vim-scripts/DeleteTrailingWhitespace'},
     {'alvan/vim-closetag'},
-    {'neanias/everforest-nvim'},
     {'fatih/vim-go', run = ':GoUpdateBinaries'},
     {'jgdavey/vim-blockle'},
     {'kchmck/vim-coffee-script'},

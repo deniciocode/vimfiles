@@ -40,7 +40,7 @@ vim.keymap.set('n', 'N', 'Nzz')
 vim.keymap.set('n', '<leader>t', ':tabnew<CR>')
 
 -- Open Explor
-vim.keymap.set('n', '<leader>e', ':Neotree focus<CR>')
+vim.keymap.set('n', '<leader>e', ':Explor<CR>')
 vim.keymap.set('n', ';', ':')
 
 -- vim.keymap.set('t', '<Esc>', '<C-\><C-n>')

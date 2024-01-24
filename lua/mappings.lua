@@ -25,7 +25,8 @@ vim.keymap.set("n", "<leader>ra", ":!rubocop -A %<CR>", {silent = true})
 -- Searching
 vim.keymap.set('n', '<leader>h' ,':noh<CR>')
 -- TODO this is not working
--- vim.keymap.set('n', '/', "/\v")
+vim.keymap.set('n', '/', '/\\c', { noremap = true })
+vim.keymap.set('v', '/', '/\\c', { noremap = true })
 -- TODO how to use paste of current visualized word
 
 -- Opens Rspec directly or VSplit

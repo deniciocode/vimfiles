@@ -33,6 +33,11 @@ vim.o.title = true
 vim.o.encoding = 'utf-8'
 vim.o.scrolloff = 3
 vim.o.autoindent = true
+vim.o.ignorecase = true
+vim.o.smartcase = true
+vim.o.incsearch = true
+vim.o.showmatch = true
+vim.o.hlsearch = true
 vim.o.smartindent = true
 vim.o.showmode = true
 vim.o.showcmd = true
@@ -91,7 +96,6 @@ vim.g.AutoCloseProtectedRegions = {"Character"}
 vim.cmd('set conceallevel=0')
 vim.cmd('let g:vim_json_conceal=0')
 vim.cmd('colorscheme everforest')
-vim.cmd('hi Normal guibg=NONE ctermbg=NONE')
 vim.api.nvim_set_option('termguicolors', true)
 
 vim.api.nvim_set_option('hlsearch', true)

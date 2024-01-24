@@ -6,7 +6,7 @@ return {
   config = function()
     require("everforest").setup({
       on_highlights = function (hl, palette)
-        hl.TSSymbol = { link = "Orange" } -- default is Agua
+        -- hl.TSSymbol = { link = "Yellow" } -- default is Agua
         -- hl.TSBoolean = { fg = palette.purple, bg = palette.none, bold = true }
       end
     })

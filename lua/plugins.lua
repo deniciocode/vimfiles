@@ -21,6 +21,5 @@ return {
     {'leafOfTree/vim-vue-plugin'},
     {'tpope/vim-rails'},
     'rstacruz/vim-closer',
-    {'tpope/vim-endwise'},
 }
 

@@ -19,6 +19,11 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup('plugins')
 
+require('nvim-treesitter.configs').setup {
+  endwise = {
+    enable = true,
+  },
+}
 require('mappings')
 require('config')
 

@@ -20,13 +20,9 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup('plugins')
 
-require('nvim-treesitter.configs').setup {
-  endwise = {
-    enable = true,
-  },
-}
+require('configs.tree-sitter')
+require('configs.lsp')
 require('mappings')
-require('config')
 
 -- Make line numbers default
 vim.wo.number = true

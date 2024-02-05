@@ -41,5 +41,6 @@
   "vim-rhubarb": { "branch": "master", "commit": "ee69335de176d9325267b0fd2597a22901d927b1" },
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
   "vim-vue-plugin": { "branch": "master", "commit": "04c3fb20ed5096a983f71af204afba07cdfa6d6f" },
+  "which-key.nvim": { "branch": "main", "commit": "4433e5ec9a507e5097571ed55c02ea9658fb268a" },
   "yats.vim": { "branch": "master", "commit": "2b6950c7143790e6930b8cf32d60c6858a50d47c" }
 }

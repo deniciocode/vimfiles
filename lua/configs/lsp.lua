@@ -66,6 +66,8 @@ local servers = {
   -- clangd = {},
   -- gopls = {},
   -- pyright = {},
+  -- ruby_ls is from shopify
+  -- ruby_ls = {},
   -- rust_analyzer = {},
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },

@@ -18,6 +18,7 @@ vim.keymap.set('i', '<down>', '<nop>')
 vim.keymap.set('i', '<left>', '<nop>')
 vim.keymap.set('i', '<right>', '<nop>')
 
+-- TODO remove me if we can do this via lsp
 vim.keymap.set("n", "<leader>rr", ":!rubocop %<CR>")
 vim.keymap.set("n", "<leader>re", ":!rubocop -a %<CR>", {silent = true})
 vim.keymap.set("n", "<leader>ra", ":!rubocop -A %<CR>", {silent = true})

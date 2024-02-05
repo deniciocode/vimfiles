@@ -1,7 +1,8 @@
 -- init.lua
 
 -- Setze dein Führungszeichen
-vim.g.mapleader = " "
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 -- Initialisiere dein Plugin-Manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -27,8 +28,37 @@ require('nvim-treesitter.configs').setup {
 require('mappings')
 require('config')
 
+-- Make line numbers default
+vim.wo.number = true
+
+-- Case-insensitive searching UNLESS \C or capital in search
+vim.o.ignorecase = true
+vim.o.smartcase = true
+
+-- Keep signcolumn on by default
+vim.wo.signcolumn = 'yes'
+
+-- Decrease update time
+vim.o.updatetime = 250
+vim.o.timeoutlen = 300
+
+-- Set completeopt to have a better completion experience
+vim.o.completeopt = 'menuone,noselect'
+
+-- NOTE: You should make sure your terminal supports this
+vim.o.termguicolors = true
+
+-- Set highlight on search
+vim.o.hlsearch = true
+
+-- TODO: checkme
+-- Enable break indent
+vim.o.breakindent = true
+
+-- Save undo history
+vim.o.undofile = true
+
 -- Globale Einstellungen
-vim.o.number = true
 vim.o.relativenumber = false
 vim.o.syntax = 'enable'
 vim.o.tabstop = 2
@@ -38,11 +68,8 @@ vim.o.title = true
 vim.o.encoding = 'utf-8'
 vim.o.scrolloff = 3
 vim.o.autoindent = true
-vim.o.ignorecase = true
-vim.o.smartcase = true
 vim.o.incsearch = true
 vim.o.showmatch = true
-vim.o.hlsearch = true
 vim.o.smartindent = true
 vim.o.showmode = true
 vim.o.showcmd = true
@@ -54,9 +81,6 @@ vim.o.ttyfast = true
 vim.o.ruler = true
 vim.o.backspace = 'indent,eol,start'
 vim.o.laststatus = 2
-vim.o.number = true
-vim.o.relativenumber = false
-vim.o.undofile = true
 vim.o.foldenable = false
 vim.opt.colorcolumn = "81"
 vim.o.winwidth = 81
@@ -101,11 +125,6 @@ vim.g.AutoCloseProtectedRegions = {"Character"}
 vim.cmd('set conceallevel=0')
 vim.cmd('let g:vim_json_conceal=0')
 vim.cmd('colorscheme everforest')
-vim.api.nvim_set_option('termguicolors', true)
-
-vim.api.nvim_set_option('hlsearch', true)
-vim.api.nvim_set_option('incsearch', true)
-
 
 -- DeleteTrailingWhitespace Konfiguration
 vim.g.DeleteTrailingWhitespace = 1

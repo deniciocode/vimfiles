@@ -107,6 +107,18 @@ vim.g.DeleteTrailingWhitespace_Action = 'delete'
 -- Fzf Vorschau-Fenster
 vim.g.fzf_preview_window = {'hidden,right,50%,<70(up,40%)', 'ctrl-/'}
 
+-- [[ Highlight on yank ]]
+-- See `:help vim.highlight.on_yank()`
+local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+vim.api.nvim_create_autocmd('TextYankPost', {
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+  group = highlight_group,
+  pattern = '*',
+})
+
+
 -- Autoread beim Fokuserhalt und Änderung der Datei im Hintergrund
 vim.cmd('au CursorHold * checktime')
 vim.cmd('au FocusGained * checktime')

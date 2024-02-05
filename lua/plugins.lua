@@ -4,7 +4,6 @@ return {
     {'tpope/vim-surround'},
     {'mattn/emmet-vim'},
     {'vim-scripts/DeleteTrailingWhitespace'},
-
     {'alvan/vim-closetag'},
     {'fatih/vim-go', run = ':GoUpdateBinaries'},
     {'jgdavey/vim-blockle'},

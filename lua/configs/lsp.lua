@@ -66,12 +66,12 @@ local servers = {
   -- clangd = {},
   -- gopls = {},
   -- pyright = {},
-  -- ruby_ls is from shopify
-  -- ruby_ls = {},
   -- rust_analyzer = {},
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
+  solargraph = {},
+  ruby_ls = {},
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
@@ -108,6 +108,12 @@ mason_lspconfig.setup_handlers {
     }
   end,
 }
+
+-- Diagnostic keymaps
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- [[ Configure nvim-cmp ]]
 -- See `:help cmp`

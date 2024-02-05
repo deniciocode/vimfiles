@@ -22,6 +22,7 @@ require('lazy').setup('plugins')
 
 require('configs.tree-sitter')
 require('configs.lsp')
+require('configs.telescope')
 require('mappings')
 
 -- Make line numbers default

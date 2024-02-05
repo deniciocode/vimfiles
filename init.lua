@@ -86,32 +86,9 @@ vim.o.splitright = true
 -- Typescript-Unterstützung
 vim.cmd('autocmd FileType typescript setlocal ts=2 sts=2 sw=2 expandtab')
 
--- Coc.nvim Konfiguration
-vim.g.coc_global_extensions = {
-    'coc-eslint',
-    'coc-prettier',
-    'coc-solargraph',
-    'coc-tsserver',
-    'coc-tslint',
-    'coc-tslint-plugin',
-    'coc-css',
-    'coc-json',
-    'coc-pyls',
-    'coc-yaml',
-    'coc-vetur'
-}
-
--- Syntastic Konfiguration
-vim.g.syntastic_check_on_open = 1
-vim.g.syntastic_check_on_wq = 0
-vim.g.syntastic_mode_map = { passive_filetypes = {'html'} }
-
 -- Gemfile, Rakefile, etc.
+-- TODO can this be removed
 vim.cmd('au BufRead,BufNewFile Gemfile,Rakefile,config.ru,Guardfile,Capfile set ft=ruby')
-
--- Airline Konfiguration
-vim.g.Powerline_symbols = 'fancy'
-vim.g.airline_powerline_fonts = 1
 
 -- AutoClose Konfiguration
 vim.g.AutoClosePairs = {['('] = ')', ['{'] = '}', ['['] = ']', ['"'] = '"', ["'"] = "'", ['#{'] = '}'}

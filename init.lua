@@ -1,7 +1,8 @@
 -- init.lua
 
 -- Setze dein Führungszeichen
-vim.g.mapleader = " "
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 -- Initialisiere dein Plugin-Manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -19,16 +20,42 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup('plugins')
 
-require('nvim-treesitter.configs').setup {
-  endwise = {
-    enable = true,
-  },
-}
+require('configs.tree-sitter')
+require('configs.lsp')
+require('configs.telescope')
 require('mappings')
-require('config')
+
+-- Make line numbers default
+vim.wo.number = true
+
+-- Case-insensitive searching UNLESS \C or capital in search
+vim.o.ignorecase = true
+vim.o.smartcase = true
+
+-- Keep signcolumn on by default
+vim.wo.signcolumn = 'yes'
+
+-- Decrease update time
+vim.o.updatetime = 250
+vim.o.timeoutlen = 300
+
+-- Set completeopt to have a better completion experience
+vim.o.completeopt = 'menuone,noselect'
+
+-- NOTE: You should make sure your terminal supports this
+vim.o.termguicolors = true
+
+-- Set highlight on search
+vim.o.hlsearch = true
+
+-- TODO: checkme
+-- Enable break indent
+vim.o.breakindent = true
+
+-- Save undo history
+vim.o.undofile = true
 
 -- Globale Einstellungen
-vim.o.number = true
 vim.o.relativenumber = false
 vim.o.syntax = 'enable'
 vim.o.tabstop = 2
@@ -38,11 +65,8 @@ vim.o.title = true
 vim.o.encoding = 'utf-8'
 vim.o.scrolloff = 3
 vim.o.autoindent = true
-vim.o.ignorecase = true
-vim.o.smartcase = true
 vim.o.incsearch = true
 vim.o.showmatch = true
-vim.o.hlsearch = true
 vim.o.smartindent = true
 vim.o.showmode = true
 vim.o.showcmd = true
@@ -54,9 +78,6 @@ vim.o.ttyfast = true
 vim.o.ruler = true
 vim.o.backspace = 'indent,eol,start'
 vim.o.laststatus = 2
-vim.o.number = true
-vim.o.relativenumber = false
-vim.o.undofile = true
 vim.o.foldenable = false
 vim.opt.colorcolumn = "81"
 vim.o.winwidth = 81
@@ -66,32 +87,9 @@ vim.o.splitright = true
 -- Typescript-Unterstützung
 vim.cmd('autocmd FileType typescript setlocal ts=2 sts=2 sw=2 expandtab')
 
--- Coc.nvim Konfiguration
-vim.g.coc_global_extensions = {
-    'coc-eslint',
-    'coc-prettier',
-    'coc-solargraph',
-    'coc-tsserver',
-    'coc-tslint',
-    'coc-tslint-plugin',
-    'coc-css',
-    'coc-json',
-    'coc-pyls',
-    'coc-yaml',
-    'coc-vetur'
-}
-
--- Syntastic Konfiguration
-vim.g.syntastic_check_on_open = 1
-vim.g.syntastic_check_on_wq = 0
-vim.g.syntastic_mode_map = { passive_filetypes = {'html'} }
-
 -- Gemfile, Rakefile, etc.
+-- TODO can this be removed
 vim.cmd('au BufRead,BufNewFile Gemfile,Rakefile,config.ru,Guardfile,Capfile set ft=ruby')
-
--- Airline Konfiguration
-vim.g.Powerline_symbols = 'fancy'
-vim.g.airline_powerline_fonts = 1
 
 -- AutoClose Konfiguration
 vim.g.AutoClosePairs = {['('] = ')', ['{'] = '}', ['['] = ']', ['"'] = '"', ["'"] = "'", ['#{'] = '}'}
@@ -101,11 +99,6 @@ vim.g.AutoCloseProtectedRegions = {"Character"}
 vim.cmd('set conceallevel=0')
 vim.cmd('let g:vim_json_conceal=0')
 vim.cmd('colorscheme everforest')
-vim.api.nvim_set_option('termguicolors', true)
-
-vim.api.nvim_set_option('hlsearch', true)
-vim.api.nvim_set_option('incsearch', true)
-
 
 -- DeleteTrailingWhitespace Konfiguration
 vim.g.DeleteTrailingWhitespace = 1
@@ -113,6 +106,18 @@ vim.g.DeleteTrailingWhitespace_Action = 'delete'
 
 -- Fzf Vorschau-Fenster
 vim.g.fzf_preview_window = {'hidden,right,50%,<70(up,40%)', 'ctrl-/'}
+
+-- [[ Highlight on yank ]]
+-- See `:help vim.highlight.on_yank()`
+local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+vim.api.nvim_create_autocmd('TextYankPost', {
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+  group = highlight_group,
+  pattern = '*',
+})
+
 
 -- Autoread beim Fokuserhalt und Änderung der Datei im Hintergrund
 vim.cmd('au CursorHold * checktime')

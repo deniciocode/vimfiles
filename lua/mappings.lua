@@ -19,9 +19,10 @@ vim.keymap.set('i', '<left>', '<nop>')
 vim.keymap.set('i', '<right>', '<nop>')
 
 -- TODO remove me if we can do this via lsp
-vim.keymap.set("n", "<leader>rr", ":!rubocop %<CR>")
-vim.keymap.set("n", "<leader>re", ":!rubocop -a %<CR>", {silent = true})
-vim.keymap.set("n", "<leader>ra", ":!rubocop -A %<CR>", {silent = true})
+vim.keymap.set("n", "<leader>cr", ":!rubocop %<CR>")
+vim.keymap.set("n", "<leader>ce", ":!rubocop -a %<CR>", {silent = true})
+vim.keymap.set("n", "<leader>ca", ":!rubocop -A %<CR>", {silent = true})
+vim.keymap.set("n", "<leader>cs", ":!standardrb --fix %<CR>", {silent = true})
 
 -- Searching
 vim.keymap.set('n', '<leader>h' ,':noh<CR>')

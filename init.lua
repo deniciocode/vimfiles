@@ -21,7 +21,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup('plugins')
 
 require('configs.tree-sitter')
-require('configs.lsp')
+require('configs.lsp-mason')
 require('configs.telescope')
 require('mappings')
 

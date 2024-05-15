@@ -70,8 +70,8 @@ local servers = {
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
-  solargraph = {},
-  ruby_ls = {},
+  -- solargraph = {},
+  -- ruby_ls = {},
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
